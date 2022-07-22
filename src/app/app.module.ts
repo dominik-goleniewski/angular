@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CatsDetailViewComponent } from './cats/cats-detail-view/cats-detail-view.component';
 import { CatsAdoptionFormComponent } from './cats/cats-adoption-form/cats-adoption-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TooltipModule
   ],
   declarations: [
     AppComponent,

@@ -1,6 +1,15 @@
 <section>
+    <button (click)="sortCatsByName()">Sort by name</button>
+    <button (click)="sortCatsByBreed()">Sort by breed</button>
     <div class="listElement" *ngFor="let cat of cats">
-        <img src="./assets/cats-pic/{{cat.picUrl}}" alt="" (click)="onClick(cat)">
+        <div [ngSwitch]="cat.adopted">
+            <div *ngSwitchCase="true">
+                    <img class="listElementAdopted" src="./assets/cats-pic/{{cat.picUrl}}" alt="" (click)="onClick(cat)" tooltip="{{cat.funFact}}" placement="right">
+            </div>
+            <div *ngSwitchCase="false">
+                <img class="listElementNotAdopted" src="./assets/cats-pic/{{cat.picUrl}}" alt="" (click)="onClick(cat)" tooltip="{{cat.funFact}}" placement="right">
+            </div>
+        </div>
         <span>{{cat.name}}</span>
     </div>
 </section>

@@ -12,12 +12,34 @@ export class CatsDetailViewComponent implements OnInit {
 
   constructor(private catsDataService: CatsDataService, private activatedRoute: ActivatedRoute) {
     this.route = activatedRoute.snapshot;
+    this.index = 0;
   }
 
+  index: number;
   cat: Cat;
   adoptionFormActive: boolean;
   showConfirmMsg: boolean;
   private route: ActivatedRouteSnapshot;
+
+  increment(): void {
+    if(this.index<4) {
+      this.index = this.index + 1;
+    }
+    else
+    {
+      this.index = 0;
+    }
+  }
+
+  decrement(): void {
+    if(this.index>0) {
+      this.index = this.index - 1;
+    }
+    else
+    {
+      this.index = 4;
+    }
+  }
 
   ngOnInit(): void {
     const catName = this.route.params['catName'];
@@ -31,5 +53,6 @@ export class CatsDetailViewComponent implements OnInit {
   onFormClose(success: boolean) {
     this.adoptionFormActive = false;
     this.showConfirmMsg = success;
+    this.cat.adopted = true;
   }
 }
