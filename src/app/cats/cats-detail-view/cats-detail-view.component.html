@@ -1,10 +1,19 @@
 <section>
     <div class="side-by-side">
-        <img src="./assets/cats-pic/{{cat.picUrl}}" alt="">
+        <div>
+            <img src="./assets/cats-pic/{{cat.picUrls[index]}}" alt="">
+            <button (click)="increment()">
+                left
+            </button>
+            <button (click)="decrement()">
+                right
+            </button>
+        </div>
         <div class="cols">
             <span class="cats-name">{{cat.name}}</span>
             <span>{{cat.ageMonths}} miesięcy</span>
             <span>{{cat.breed}}</span>
+            <span>Zaszczepiony:<div *ngIf="cat.vaccinated"><input type="checkbox" onclick="return false;" checked="checked"></div></span>
         </div>
     </div>
 

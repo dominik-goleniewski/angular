@@ -6,7 +6,19 @@
 
   .listElement {
     max-width: 550px;
-    border: solid 2px #444444;
+    border: solid 2px #000000;
+    margin: 20px 0 20px 0;
+  }
+
+  .listElementNotAdopted {
+    max-width: 550px;
+    border: solid 2px #51f804;
+    margin: 20px 0 20px 0;
+  }
+
+  .listElementAdopted {
+    max-width: 550px;
+    border: solid 2px #fc0303;
     margin: 20px 0 20px 0;
   }
 
